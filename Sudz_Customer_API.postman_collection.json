@@ -1,0 +1,530 @@
+{
+	"info": {
+		"_postman_id": "sudz-customer-api-v1",
+		"name": "Sudz - Customer API",
+		"description": "Complete customer mobile app API collection for Sudz car wash service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Authentication",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Ahmed Ali\",\n    \"phone\": \"0512345678\",\n    \"password\": \"password123\",\n    \"password_confirmation\": \"password123\"\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/auth/register", "host": ["{{base_url}}"], "path": ["auth", "register"]}
+					}
+				},
+				{
+					"name": "Verify Phone",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"0512345678\",\n    \"otp\": \"123456\"\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/auth/verify-phone", "host": ["{{base_url}}"], "path": ["auth", "verify-phone"]}
+					}
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": ["var jsonData = JSON.parse(responseBody);", "if (jsonData.token) {", "    pm.environment.set(\"auth_token\", jsonData.token);", "}"],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"0512345678\",\n    \"password\": \"password123\"\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/auth/login", "host": ["{{base_url}}"], "path": ["auth", "login"]}
+					}
+				},
+				{
+					"name": "Get Profile",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/auth/profile", "host": ["{{base_url}}"], "path": ["auth", "profile"]}
+					}
+				},
+				{
+					"name": "Edit Profile",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Ahmed Ali Updated\",\n    \"email\": \"ahmed@example.com\"\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/auth/edit-profile", "host": ["{{base_url}}"], "path": ["auth", "edit-profile"]}
+					}
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"current_password\": \"password123\",\n    \"password\": \"newpassword123\",\n    \"password_confirmation\": \"newpassword123\"\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/auth/change-password", "host": ["{{base_url}}"], "path": ["auth", "change-password"]}
+					}
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/auth/logout", "host": ["{{base_url}}"], "path": ["auth", "logout"]}
+					}
+				}
+			]
+		},
+		{
+			"name": "2. Addresses",
+			"item": [
+				{
+					"name": "List Addresses",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/addresses", "host": ["{{base_url}}"], "path": ["addresses"]}
+					}
+				},
+				{
+					"name": "Create Address",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Home\",\n    \"description\": \"My home address\",\n    \"lat\": 24.7136,\n    \"lng\": 46.6753,\n    \"city\": \"Riyadh\",\n    \"district\": \"Al Olaya\",\n    \"street_name\": \"King Fahd Road\",\n    \"building_number\": \"123\",\n    \"address_type\": \"home\",\n    \"is_default\": true\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/addresses", "host": ["{{base_url}}"], "path": ["addresses"]}
+					}
+				},
+				{
+					"name": "Update Address",
+					"request": {
+						"method": "PUT",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Home Updated\"\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/addresses/1", "host": ["{{base_url}}"], "path": ["addresses", "1"]}
+					}
+				},
+				{
+					"name": "Set Default Address",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/addresses/1/set-default", "host": ["{{base_url}}"], "path": ["addresses", "1", "set-default"]}
+					}
+				},
+				{
+					"name": "Delete Address",
+					"request": {
+						"method": "DELETE",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/addresses/1", "host": ["{{base_url}}"], "path": ["addresses", "1"]}
+					}
+				}
+			]
+		},
+		{
+			"name": "3. Cars",
+			"item": [
+				{
+					"name": "Get Car Sizes",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}],
+						"url": {"raw": "{{base_url}}/car-sizes", "host": ["{{base_url}}"], "path": ["car-sizes"]}
+					}
+				},
+				{
+					"name": "List Cars",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/cars", "host": ["{{base_url}}"], "path": ["cars"]}
+					}
+				},
+				{
+					"name": "Add Car",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"سيارتي\",\n    \"brand\": \"Toyota\",\n    \"model\": \"Camry\",\n    \"year\": 2023,\n    \"color\": \"White\",\n    \"plate_number\": \"ك ع ٥٥٢١\",\n    \"car_size_id\": 2,\n    \"is_primary\": true\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/cars", "host": ["{{base_url}}"], "path": ["cars"]}
+					}
+				},
+				{
+					"name": "Update Car",
+					"request": {
+						"method": "PUT",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"color\": \"Black\"\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/cars/1", "host": ["{{base_url}}"], "path": ["cars", "1"]}
+					}
+				},
+				{
+					"name": "Set Primary Car",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/cars/1/set-primary", "host": ["{{base_url}}"], "path": ["cars", "1", "set-primary"]}
+					}
+				},
+				{
+					"name": "Delete Car",
+					"request": {
+						"method": "DELETE",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/cars/1", "host": ["{{base_url}}"], "path": ["cars", "1"]}
+					}
+				}
+			]
+		},
+		{
+			"name": "4. Services",
+			"item": [
+				{
+					"name": "List Service Categories",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}],
+						"url": {"raw": "{{base_url}}/service-categories", "host": ["{{base_url}}"], "path": ["service-categories"]}
+					}
+				},
+				{
+					"name": "Browse Services",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}],
+						"url": {"raw": "{{base_url}}/services", "host": ["{{base_url}}"], "path": ["services"]}
+					}
+				},
+				{
+					"name": "Service Details",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}],
+						"url": {"raw": "{{base_url}}/services/1", "host": ["{{base_url}}"], "path": ["services", "1"]}
+					}
+				}
+			]
+		},
+		{
+			"name": "5. Packages",
+			"item": [
+				{
+					"name": "List Packages",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/packages", "host": ["{{base_url}}"], "path": ["packages"]}
+					}
+				},
+				{
+					"name": "Package Details",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/packages/1", "host": ["{{base_url}}"], "path": ["packages", "1"]}
+					}
+				},
+				{
+					"name": "Purchase Package",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payment_method\": \"cod\"\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/packages/1/purchase", "host": ["{{base_url}}"], "path": ["packages", "1", "purchase"]}
+					}
+				},
+				{
+					"name": "My Active Packages",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/packages/my-packages", "host": ["{{base_url}}"], "path": ["packages", "my-packages"]}
+					}
+				}
+			]
+		},
+		{
+			"name": "6. Bookings",
+			"item": [
+				{
+					"name": "List Bookings",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/bookings?status=confirmed", "host": ["{{base_url}}"], "path": ["bookings"], "query": [{"key": "status", "value": "confirmed"}]}
+					}
+				},
+				{
+					"name": "Create Booking",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"service_id\": 1,\n    \"car_id\": 1,\n    \"address_id\": 1,\n    \"scheduled_date\": \"2025-11-15\",\n    \"scheduled_start_time\": \"10:00\",\n    \"scheduled_end_time\": \"11:00\",\n    \"payment_method\": \"cod\",\n    \"total_amount\": 50.00,\n    \"notes\": \"Please call when arriving\"\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/bookings", "host": ["{{base_url}}"], "path": ["bookings"]}
+					}
+				},
+				{
+					"name": "Booking Details",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/bookings/1", "host": ["{{base_url}}"], "path": ["bookings", "1"]}
+					}
+				},
+				{
+					"name": "Reschedule Booking",
+					"request": {
+						"method": "PUT",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"scheduled_date\": \"2025-11-16\",\n    \"scheduled_start_time\": \"14:00\",\n    \"scheduled_end_time\": \"15:00\"\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/bookings/1/reschedule", "host": ["{{base_url}}"], "path": ["bookings", "1", "reschedule"]}
+					}
+				},
+				{
+					"name": "Cancel Booking",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reason\": \"Something came up, need to reschedule\"\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/bookings/1/cancel", "host": ["{{base_url}}"], "path": ["bookings", "1", "cancel"]}
+					}
+				},
+				{
+					"name": "Booking Timeline",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/bookings/1/timeline", "host": ["{{base_url}}"], "path": ["bookings", "1", "timeline"]}
+					}
+				}
+			]
+		},
+		{
+			"name": "7. Special Time Requests",
+			"item": [
+				{
+					"name": "List Requests",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/special-time-requests", "host": ["{{base_url}}"], "path": ["special-time-requests"]}
+					}
+				},
+				{
+					"name": "Submit Request",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"service_id\": 1,\n    \"address_id\": 1,\n    \"requested_date\": \"2025-11-20\",\n    \"requested_start_time\": \"22:00\",\n    \"requested_end_time\": \"23:00\",\n    \"reason\": \"I work late and this is the only time available\"\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/special-time-requests", "host": ["{{base_url}}"], "path": ["special-time-requests"]}
+					}
+				},
+				{
+					"name": "Cancel Request",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/special-time-requests/1/cancel", "host": ["{{base_url}}"], "path": ["special-time-requests", "1", "cancel"]}
+					}
+				}
+			]
+		},
+		{
+			"name": "8. Ratings & Tips",
+			"item": [
+				{
+					"name": "Rate Booking",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"overall_rating\": 5,\n    \"quality_score\": 5,\n    \"punctuality_score\": 5,\n    \"professionalism_score\": 5,\n    \"cleanliness_score\": 5,\n    \"review_text\": \"Excellent service!\",\n    \"review_text_ar\": \"خدمة ممتازة!\",\n    \"tip_amount\": 20.00,\n    \"tip_payment_method\": \"cod\"\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/ratings/bookings/1/rate", "host": ["{{base_url}}"], "path": ["ratings", "bookings", "1", "rate"]}
+					}
+				},
+				{
+					"name": "Give Tip",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tip_amount\": 15.00,\n    \"payment_method\": \"cod\",\n    \"note\": \"Great work!\"\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/ratings/bookings/1/tip", "host": ["{{base_url}}"], "path": ["ratings", "bookings", "1", "tip"]}
+					}
+				},
+				{
+					"name": "My Ratings",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/ratings/my-ratings", "host": ["{{base_url}}"], "path": ["ratings", "my-ratings"]}
+					}
+				}
+			]
+		},
+		{
+			"name": "9. Notifications",
+			"item": [
+				{
+					"name": "List Notifications",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/notifications", "host": ["{{base_url}}"], "path": ["notifications"]}
+					}
+				},
+				{
+					"name": "Mark as Read",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/notifications/1/read", "host": ["{{base_url}}"], "path": ["notifications", "1", "read"]}
+					}
+				},
+				{
+					"name": "Mark All Read",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/notifications/read-all", "host": ["{{base_url}}"], "path": ["notifications", "read-all"]}
+					}
+				},
+				{
+					"name": "Delete Notification",
+					"request": {
+						"method": "DELETE",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{auth_token}}"}],
+						"url": {"raw": "{{base_url}}/notifications/1", "host": ["{{base_url}}"], "path": ["notifications", "1"]}
+					}
+				}
+			]
+		},
+		{
+			"name": "10. App Content",
+			"item": [
+				{
+					"name": "Terms & Conditions",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}],
+						"url": {"raw": "{{base_url}}/app-content/terms", "host": ["{{base_url}}"], "path": ["app-content", "terms"]}
+					}
+				},
+				{
+					"name": "Privacy Policy",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}],
+						"url": {"raw": "{{base_url}}/app-content/privacy", "host": ["{{base_url}}"], "path": ["app-content", "privacy"]}
+					}
+				},
+				{
+					"name": "About Us",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}],
+						"url": {"raw": "{{base_url}}/app-content/about", "host": ["{{base_url}}"], "path": ["app-content", "about"]}
+					}
+				},
+				{
+					"name": "FAQ",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}],
+						"url": {"raw": "{{base_url}}/app-content/faq", "host": ["{{base_url}}"], "path": ["app-content", "faq"]}
+					}
+				},
+				{
+					"name": "Contact Info",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}],
+						"url": {"raw": "{{base_url}}/app-content/contact", "host": ["{{base_url}}"], "path": ["app-content", "contact"]}
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		},
+		{
+			"key": "auth_token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
+

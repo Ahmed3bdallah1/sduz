@@ -1,0 +1,571 @@
+{
+  "app_name": "سدز",
+  "welcome": "مرحبا",
+  "common": {
+    "ok": "حسناً",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "error_title": "خطأ",
+    "login_required_title": "تسجيل الدخول مطلوب",
+    "login_required_message": "يجب عليك تسجيل الدخول أولاً للمتابعة",
+    "login_button": "تسجيل الدخول"
+  },
+  "home": {
+    "services_title": "الخدمات",
+    "packages_title": "الباقات",
+    "view_all": "رؤية الجميع",
+    "others_category": "اخرى",
+    "package_name": "اسم الباقة",
+    "remaining_days": "الايام المتبقية",
+    "day": "يوم",
+    "days": "أيام",
+    "remaining_washes": "الغسلات المتبقية",
+    "wash": "غسلة",
+    "washes": "غسلات"
+  },
+  "messages": {
+    "account_created_please_verifiy_your_phone": "تم إنشاء الحساب. يرجى التحقق من رقم الجوال.",
+    "phone_verified_successfully": "تم التحقق من رقم الجوال بنجاح.",
+    "invalid_code": "رمز التحقق غير صحيح.",
+    "code_resent": "تم إرسال رمز تحقق جديد.",
+    "user_loged_successfully": "تم تسجيل الدخول بنجاح."
+  },
+  "auth": {
+    "role_selection": {
+      "title": "اختر تجربتك",
+      "subtitle": "حدد كيف تريد استخدام تطبيق سدز.",
+      "client_title": "العميل",
+      "client_description": "احجز وتابع طلبات العناية بسيارتك.",
+      "technical_title": "الفني",
+      "technical_description": "أدر المهام المسندة لك وارفع صور العمل.",
+      "continue_client": "متابعة كعميل",
+      "continue_technical": "متابعة كفني",
+      "already_have_account": "لديك حساب بالفعل؟",
+      "login_link": "تسجيل الدخول"
+    },
+    "login": {
+      "title": "مرحبًا بعودتك",
+      "subtitle": "يُرجى تسجيل الدخول للمتابعة.",
+      "email_or_phone_label": "الاسم او رقم الجوال",
+      "email_or_phone_hint": "أدخل البريد الإلكتروني أو رقم الجوال",
+      "email_or_phone_error": "الرجاء إدخال البريد الإلكتروني أو رقم الجوال",
+      "password_label": "كلمة المرور",
+      "password_hint": "أدخل كلمة المرور",
+      "password_error_empty": "الرجاء إدخال كلمة المرور",
+      "password_error_length": "كلمة المرور يجب أن تكون 6 أحرف على الأقل",
+      "forgot_password": "نسيت كلمة المرور؟",
+      "login_button": "تسجيل الدخول",
+      "no_account": "ما عندك حساب؟ ",
+      "create_account": "انشئ حساب",
+      "login_as_guest": "الدخول كزائر",
+      "register_link": "تسجيل الدخول",
+      "success_title": "نجح تسجيل الدخول",
+      "success_message": "مرحبًا بك!",
+      "error_message": "حدث خطأ أثناء تسجيل الدخول",
+      "error_empty_fields": "الرجاء إدخال جميع الحقول",
+      "technical_title": "مرحبًا أيها الفني",
+      "technical_subtitle": "سجّل دخولك لإدارة المهام الموكلة لك.",
+      "technical_no_signup": "يتم تفعيل حسابات الفنيين عن طريق فريق سدز.",
+      "back_to_roles": "تغيير نوع الدور"
+    },
+    "signup": {
+      "title": "مرحبًا بك",
+      "subtitle": "أنشئ حسابك للمتابعة",
+      "name_label": "الاسم",
+      "name_hint": "أدخل اسمك الكامل",
+      "name_error": "الرجاء إدخال الاسم",
+      "phone_label": "رقم الجوال",
+      "phone_hint": "أدخل رقم الجوال",
+      "phone_error": "الرجاء إدخال رقم الجوال",
+      "email_label": "البريد الإلكتروني (اختياري)",
+      "email_hint": "أدخل البريد الإلكتروني",
+      "email_error": "الرجاء إدخال البريد الإلكتروني",
+      "password_label": "كلمة المرور",
+      "password_hint": "أدخل كلمة المرور",
+      "password_error_empty": "الرجاء إدخال كلمة المرور",
+      "password_error_length": "كلمة المرور يجب أن تكون 6 أحرف على الأقل",
+      "signup_button": "تسجيل الدخول",
+      "have_account": "عندك حساب؟ ",
+      "login": "الدخول كزائر",
+      "success_title": "نجح التسجيل",
+      "success_message": "تم إنشاء حسابك بنجاح!",
+      "error_message": "حدث خطأ أثناء التسجيل",
+      "error_empty_fields": "الرجاء إدخال جميع الحقول",
+      "technical_not_available": "حسابات الفنيين يتم توفيرها من قبل سدز. يرجى التواصل مع فريق الدعم."
+    },
+    "verify_phone": {
+      "title": "تأكيد رقم الجوال",
+      "subtitle": "أدخل الرمز المكون من 6 أرقام المرسل إلى {phone} لتفعيل حسابك.",
+      "code_label": "رمز التحقق",
+      "code_hint": "أدخل رمز من 6 أرقام",
+      "submit_button": "تأكيد",
+      "resend_button": "إعادة إرسال الرمز",
+      "code_length_error": "يرجى إدخال رمز التحقق المكون من 6 أرقام.",
+      "generic_error": "تعذر تأكيد رقم الجوال. حاول مرة أخرى.",
+      "success_title": "تم التحقق من الرقم",
+      "missing_arguments": "تعذر بدء عملية التحقق. يرجى إعادة محاولة التسجيل."
+    }
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "orders": "حجوزاتي",
+    "store": "المتجر",
+    "profile": "حسابي"
+  },
+  "store": {
+    "title": "المتجر",
+    "error_generic": "حدث خطأ غير متوقع",
+    "currency_value": "{value} ر.س.",
+    "category": {
+      "oils": "زيوت",
+      "water": "مياه",
+      "parts": "قطع غيار",
+      "batteries": "بطاريات",
+      "cleaning": "منظفات",
+      "tools": "أدوات",
+      "lighting": "إضاءة",
+      "tires": "إطارات",
+      "filters": "فلاتر"
+    },
+    "filter": {
+      "all": "الكل",
+      "type1": "نوع",
+      "type2": "نوع",
+      "type3": "نوع",
+      "type4": "نوع",
+      "type5": "نوع"
+    },
+    "sort": {
+      "suggested": "الإقتراحات",
+      "price_low": "السعر: من الأقل للأعلى",
+      "price_high": "السعر: من الأعلى للأقل"
+    },
+    "product": {
+      "name": "منتج",
+      "description": "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة. لقد تم توليد هذا النص من مولد النص العرب.",
+      "type": "نوع زيت",
+      "details": "تفاصيل المنتج",
+      "origin": "بلد الصنع: {country}",
+      "saudi": "المملكة العربية السعودية",
+      "related": "منتجات ذات صلة"
+    },
+    "action": {
+      "add_to_cart": "أضف إلى السلة",
+      "show_more": "إظهار المزيد",
+      "edit": "تعديل"
+    },
+    "cart": {
+      "title": "السلة",
+      "related": "منتجات ذات صلة",
+      "checkout": "إتمام الشراء"
+    },
+    "summary": {
+      "subtotal": "المجموع الفرعي",
+      "delivery": "التوصيل",
+      "total": "الإجمالي"
+    },
+    "checkout": {
+      "title": "تحقق من",
+      "address": "المكلا - مسجد عمر، سوق الذهب",
+      "address_title": "العنوان",
+      "address_value": "المكلا - مسجد عمر، سوق الذهب",
+      "payment_method": "طريقة الدفع",
+      "buy": "شراء"
+    },
+    "payment": {
+      "cash": "الدفع نقدي",
+      "tabby": "تابي",
+      "tamara": "تمارا",
+      "visa": "فيزا",
+      "apple_pay": "أبل باي"
+    },
+    "confirmation": {
+      "title": "تم تأكيد الطلب بنجاح",
+      "subtitle": "تم تسجيل طلبك ويتم معالجته",
+      "back_home": "العودة للرئيسية"
+    }
+  },
+  "service": {
+    "checkout": {
+      "title": "خيارات السداد",
+      "selection_title": "اختر طريقة إكمال الحجز",
+      "button_continue": "استمرار",
+      "summary_title": "ملخص الحجز",
+      "summary_service_label": "الخدمة المختارة",
+      "summary_car_label": "السيارة",
+      "summary_schedule_label": "الوقت المحدد",
+      "summary_total_label": "الإجمالي المستحق",
+      "single_summary_helper": "الدفع عند الانتهاء",
+      "package_summary_covered": "مشمول ضمن الباقة",
+      "package_summary_helper": "لا حاجة لدفع إضافي",
+      "option_single_title": "خدمة لمرة واحدة",
+      "option_single_subtitle": "ادفع مقابل هذا الموعد فقط",
+      "option_package_title": "استخدام رصيد الباقة",
+      "option_package_subtitle": "يتم الخصم من باقتك النشطة",
+      "option_package_disabled": "فعّل الباقة لاستخدامها هنا",
+      "package_header": "باقة نشطة",
+      "package_washes": "متبقي {} غسلات",
+      "package_days": "متبقي {} يوم",
+      "package_unavailable": "لا توجد لديك باقة نشطة.",
+      "package_disabled_hint": "قم بتفعيل الباقة لاستخدامها في هذا الحجز.",
+      "package_title": "السداد باستخدام الباقة",
+      "package_placeholder": "مسار السداد بالباقة قيد التطوير.",
+      "single_title": "السداد لخدمة منفردة",
+      "single_placeholder": "مسار السداد للخدمة المنفردة قيد التطوير.",
+      "error_no_package": "لا توجد باقة نشطة متاحة.",
+      "error_choose_option": "يرجى اختيار طريقة إكمال الحجز.",
+      "error_missing_params": "بيانات السداد غير متوفرة.",
+      "error_select_car": "يرجى اختيار السيارة قبل المتابعة.",
+      "error_select_service": "يرجى اختيار الخدمة قبل المتابعة.",
+      "proceed_with_price": "استمرار • {} {}",
+      "proceed_button": "استمرار"
+    },
+    "schedule": {
+      "title": "اختيار الموعد",
+      "calendar_title": "اختر المعاد المناسب",
+      "description_title": "الوصف",
+      "pick_slot_title": "حدد الوقت المناسب",
+      "request_alternate": "طلب توفير ميعاد",
+      "alternate_requested": "سيتم إشعارك حال توفر موعد جديد.",
+      "no_alternate_message": "لا يوجد معاد مناسب؟",
+      "continue": "حجز",
+      "total_label": "الإجمالي",
+      "package_covered": "مشمول في الباقة",
+      "no_slot_selected": "اختر اليوم والوقت",
+      "error_unavailable_slot": "هذا الموعد لم يعد متاحاً.",
+      "error_select_slot": "يرجى اختيار موعد للمتابعة.",
+      "today_badge": "اليوم",
+      "weekday_sun": "الأحد",
+      "weekday_mon": "الاثنين",
+      "weekday_tue": "الثلاثاء",
+      "weekday_wed": "الأربعاء",
+      "weekday_thu": "الخميس",
+      "weekday_fri": "الجمعة",
+      "weekday_sat": "السبت"
+    }
+  },
+  "packages": {
+    "title": "الباقات",
+    "error_generic": "حدث خطأ أثناء تحميل الباقات",
+    "empty_state": "لا توجد باقات متاحة الآن",
+    "choose_title": "اختر الباقة",
+    "choose_subtitle": "استعرض أنواع الباقات المتوفرة ثم واصل لإتمام الشراء.",
+    "recommended_badge": "يوصى به",
+    "price": "{value} ريال",
+    "washes": "{count} غسلات",
+    "validity": "{days} يوماً",
+    "benefits": {
+      "exterior_polish": "غسيل خارجي وتلميع متكامل",
+      "interior_vacuum": "تنظيف داخلي بالمكنسة الكهربائية",
+      "rim_detailing": "تلميع الإطارات وتنظيف الجنوط",
+      "quick_exterior": "غسيل خارجي سريع",
+      "interior_wipe": "تنظيف المقصورة والعناية الداخلية",
+      "window_clean": "تنظيف الزجاج الداخلي والخارجي",
+      "deep_detail": "تفاصيل خارجية فاخرة",
+      "engine_clean": "تنظيف للمحرك والعناية به",
+      "ceramic_finish": "طبقة حماية نهائية لامعة"
+    },
+    "items": {
+      "premium": {
+        "title": "غسيل ممتاز"
+      },
+      "classic": {
+        "title": "الغسيل الأساسي"
+      },
+      "luxury": {
+        "title": "غسيل فاخر"
+      }
+    },
+    "summary": {
+      "total_label": "المجموع",
+      "total_value": "{value} ريال",
+      "checkout_cta": "اشتري"
+    },
+    "checkout": {
+      "title": "إتمام شراء الباقة",
+      "payment_methods": "طريقة الدفع",
+      "subtotal_label": "قيمة الباقة",
+      "total_label": "الإجمالي",
+      "confirm_cta": "تأكيد الشراء",
+      "price_value": "{value} ريال"
+    },
+    "confirmation": {
+      "title": "تم تفعيل الباقة بنجاح",
+      "subtitle": "تم تفعيل باقة {name} في حسابك، استمتع بخدماتنا.",
+      "back_to_packages": "العودة إلى الباقات"
+    }
+  },
+  "profile": {
+    "title": "حسابي",
+    "error_generic": "حدث خطأ غير متوقع",
+    "logout": "تسجيل الخروج",
+    "logout_confirm_title": "تأكيد تسجيل الخروج",
+    "logout_confirm_message": "هل أنت متأكد من تسجيل الخروج؟",
+    "quick_links": {
+      "cars": "سياراتي",
+      "packages": "باقاتي",
+      "gifts": "الإهداءات",
+      "language": "اللغة"
+    },
+    "language": {
+      "ar": "ar",
+      "en": "eng",
+      "ar_label": "عربي",
+      "en_label": "English"
+    },
+    "policies": {
+      "privacy": "سياسة الخصوصية",
+      "reservation": "سياسة الحجز والإلغاء"
+    },
+    "logout": "تسجيل الخروج",
+    "cars": {
+      "title": "سياراتي",
+      "add_button": "إضافة سيارة",
+      "plate_prefix": "لوحة السيارة: {}",
+      "primary_badge": "السيارة الافتراضية",
+      "make_primary": "تعيين كافتراضي",
+      "edit": "تعديل",
+      "delete": "حذف",
+      "edit_coming_soon": "قريباً سيكون التعديل متاحاً",
+      "empty_state": {
+        "title": "لا توجد سيارات مسجلة",
+        "subtitle": "أضف سيارتك لبدء الحجز بسرعة."
+      }
+    },
+    "packages": {
+      "title": "باقاتي",
+      "price_format": "{} ريال",
+      "wash_count": "{} غسلات",
+      "validity_days": "{} يوماً",
+      "benefits": {
+        "exterior_detail": "غسيل وتلميع خارجي",
+        "interior_vacuum": "التنظيف الداخلي بالمكنسة الكهربائية",
+        "wheel_shine": "تلميع الإطارات وتنظيف الجنوط",
+        "quick_exterior": "غسيل خارجي سريع",
+        "glass_clean": "تنظيف الزجاج الداخلي",
+        "cabin_freshener": "تعطير المقصورة"
+      },
+      "add_button": "إضافة باقة",
+      "add_toast": "سيتم إضافة الباقات قريباً",
+      "empty_state": {
+        "title": "لا توجد باقات مفعّلة",
+        "subtitle": "استمتع بعروض الغسيل واشترك في باقة جديدة."
+      }
+    },
+    "dedication": {
+      "title": "الإهداءات",
+      "subtitle": "أرسل باقة غسيل كهدية لأصدقائك وعائلتك.",
+      "phone_hint": "رقم الجوال",
+      "type_hint": "اختر نوع الهدية",
+      "submit": "إرسال",
+      "success": "تم إرسال الإهداء بنجاح",
+      "error_phone": "يرجى إدخال رقم الجوال",
+      "error_type": "يرجى اختيار نوع الهدية",
+      "load_failure": "حدث خطأ أثناء تحميل الإهداءات"
+    }
+  },
+  "tech": {
+    "common": {
+      "cancel": "إلغاء"
+    },
+    "home": {
+      "title": {
+        "jobs": "مهامي",
+        "profile": "حسابي"
+      },
+      "nav": {
+        "jobs": "مهامي",
+        "profile": "الحساب",
+        "switch_role": "تبديل الدور"
+      }
+    },
+    "profile": {
+      "coming_soon": "ملف الفني قيد الإعداد",
+      "header": {
+        "title": "ملف الفني",
+        "subtitle": "اطلع على بياناتك في خدمة المتجر وتواصل مع المشرف عند الحاجة."
+      },
+      "initials": "TS",
+      "name": "مقدم الخدمة",
+      "role": "فني ميداني",
+      "app_name_label": "اسم التطبيق",
+      "app_name_value": "SUDZ • متجر الخدمة",
+      "service_brand": "العلامة",
+      "service_description": "نوفر عناية احترافية للسيارات في موقع العميل",
+      "contact_header": "تحتاج مساعدة؟",
+      "contact_hint": "المشرف جاهز لدعمك في جدولة الزيارات أو التواصل مع العميل.",
+      "call_admin": "الاتصال بالمشرف",
+      "admin_phone": "+966500000000",
+      "call_error": "تعذر إجراء المكالمة، حاول مرة أخرى."
+    },
+    "jobs": {
+      "filters": {
+        "today": "اليوم",
+        "upcoming": "القادمة",
+        "overdue": "المتأخرة",
+        "all": "الكل"
+      },
+      "status": {
+        "assigned": "قيد التعيين",
+        "en_route": "في الطريق",
+        "on_site": "في الموقع",
+        "work_started": "بدأ العمل",
+        "work_completed": "اكتمل العمل",
+        "pending_review": "بانتظار المراجعة",
+        "closed": "مغلق",
+        "rejected": "مرفوض",
+        "cancelled": "ملغي"
+      },
+      "list": {
+        "error": {
+          "generic": "تعذر تحميل المهام",
+          "maps": "تعذر فتح خرائط جوجل"
+        },
+        "actions": {
+          "open_maps": "فتح الخرائط",
+          "retry": "إعادة المحاولة"
+        },
+        "request_code": "الطلب • {}",
+        "pending_sync": "مزامنة معلقة • سيتم إرسال التحديثات عند الاتصال",
+        "view_details": "عرض التفاصيل",
+        "distance": {
+          "kilometers": "{} كم",
+          "eta_hours": "الوقت المتوقع {} ساعة",
+          "eta_hours_minutes": "الوقت المتوقع {}س {}د",
+          "eta_minutes": "الوقت المتوقع {} دقيقة"
+        },
+        "empty": {
+          "title": "لا توجد مهام لهذا التصنيف",
+          "subtitle": "يمكنك التحديث للتحقق من وجود طلبات جديدة."
+        },
+        "syncing_banner": "جاري مزامنة التحديثات…"
+      },
+      "details": {
+        "title_default": "تفاصيل المهمة",
+        "error": {
+          "generic": "تعذر تحميل تفاصيل المهمة"
+        },
+        "app_bar": "المهمة {}",
+        "badge": {
+          "pending_sync": "مزامنة معلقة"
+        },
+        "sections": {
+          "overview": "نظرة عامة",
+          "client": "العميل",
+          "location": "الموقع"
+        },
+        "fields": {
+          "request_id": "رقم الطلب",
+          "window": "الفترة الزمنية"
+        },
+        "location": {
+          "open_maps": "فتح في خرائط جوجل",
+          "error_maps": "تعذر فتح خرائط جوجل لهذا العنوان."
+        },
+        "client": {
+          "error_call": "تعذر بدء مكالمة على الرقم {}."
+        },
+        "sync": {
+          "title": "تحديثات غير متزامنة",
+          "subtitle": "سيتم إرسال هذه التحديثات عند توفر الاتصال بالإنترنت.",
+          "in_progress": "جاري المزامنة…",
+          "action": "مزامنة الآن"
+        },
+        "evidence": {
+          "pre": {
+            "title": "صور قبل العمل",
+            "helper": "التقط على الأقل {} صورة قبل البدء."
+          },
+          "post": {
+            "title": "صور بعد العمل",
+            "helper": "حمّل {} صوراً قبل إنهاء المهمة."
+          },
+          "rejection": {
+            "title": "صور الرفض",
+            "helper": "توثيق اختياري عند رفض المهمة."
+          },
+          "optional": "اختياري",
+          "progress": "{} / {} مطلوب",
+          "labels": {
+            "pre": "صورة قبل العمل {}",
+            "post": "صورة بعد العمل {}",
+            "rejection": "صورة توثيق الرفض {}"
+          },
+          "remove": "إزالة",
+          "add_photo": "إضافة صورة"
+        },
+        "history": {
+          "title": "السجل"
+        },
+        "actions": {
+          "arrive": "تأكيد الوصول",
+          "reject": "رفض الطلب",
+          "start_work": "بدء العمل",
+          "complete_work": "إنهاء العمل",
+          "call": "الاتصال بالعميل"
+        },
+        "validation": {
+          "pre_evidence_required": "حمّل {} صوراً قبل العمل قبل البدء.",
+          "post_evidence_required": "حمّل {} صوراً بعد العمل قبل الإنهاء."
+        },
+        "status": {
+          "pending_review_message": "تم إنهاء العمل، بانتظار مراجعة المشرف.",
+          "work_completed_message": "تم تسجيل إكمال العمل، سنخطرُك عند المراجعة.",
+          "closed_message": "تم إغلاق هذا الطلب.",
+          "rejected_message": "تم رفض الطلب. انتظر تعليمات إضافية.",
+          "cancelled_message": "تم إلغاء هذه المهمة."
+        },
+        "toast": {
+          "already_closed": "تم إغلاق هذا الطلب مسبقاً.",
+          "arrive_invalid_state": "يمكن تأكيد الوصول فقط من حالات التعيين أو أثناء الطريق.",
+          "arrive_outside_radius": "أنت خارج نطاق الموقع بمسافة تقريبية قدرها {}{}، يرجى توضيح السبب.",
+          "pre_evidence_progress": "صور قبل العمل • {}/{}",
+          "post_evidence_progress": "صور بعد العمل • {}/{}",
+          "rejection_evidence_added": "تم إرفاق صورة توثيق ({})",
+          "pre_evidence_required": "حمّل {} صوراً قبل العمل قبل البدء.",
+          "work_started": "تم تسجيل بدء العمل",
+          "post_evidence_required": "حمّل {} صوراً بعد العمل قبل الإنهاء.",
+          "work_completed": "تم تسجيل إكمال العمل",
+          "rejection_reason_short": "يرجى كتابة سبب لا يقل عن 10 أحرف.",
+          "rejected": "تم رفض الطلب",
+          "no_pending_sync": "لا توجد تحديثات معلقة للمزامنة.",
+          "sync_success": "تمت مزامنة التحديثات بنجاح",
+          "arrived": "تم تسجيل الوصول إلى الموقع"
+        },
+        "timeline": {
+          "assigned": "تم تعيين الطلب",
+          "assigned_note": "الفترة المجدولة {}",
+          "work_started": "تم بدء العمل",
+          "work_completed": "تم إكمال العمل",
+          "rejected": "تم رفض الطلب",
+          "rejected_note": "السبب: {}",
+          "arrived": "تم الوصول إلى الموقع",
+          "override_note": "ملاحظة استثنائية: {}",
+          "pending_synced": "تمت مزامنة التحديثات المعلقة"
+        },
+        "pending_actions": {
+          "arrive": "تأكيد الوصول",
+          "arrive_override": "وصول (استثناء)",
+          "start_work": "بدء العمل",
+          "complete_work": "إكمال العمل",
+          "reject": "رفض • {}"
+        },
+        "geo": {
+          "title": "خارج نطاق الموقع",
+          "description": "تبدو على بعد {}{} من الموقع. أضف ملاحظة توضيحية أو ألغِ العملية.",
+          "description_no_distance": "تبدو خارج الموقع المحدد. أضف ملاحظة للمراجعة أو ألغِ العملية.",
+          "override_label": "ملاحظة الاستثناء",
+          "override_hint": "اشرح سبب تسجيل الوصول من هذا الموقع.",
+          "submit": "إرسال الملاحظة"
+        },
+        "reject": {
+          "title": "رفض الطلب",
+          "description": "اكتب سبباً واضحاً (10 أحرف على الأقل). سيصل السبب للعميل والمشرف.",
+          "input_label": "سبب الرفض",
+          "add_placeholder": "إرفاق صورة افتراضية",
+          "submit": "إرسال الرفض"
+        }
+      }
+    }
+  }
+}

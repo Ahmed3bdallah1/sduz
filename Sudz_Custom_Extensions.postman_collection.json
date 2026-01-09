@@ -1,0 +1,81 @@
+{
+  "info": {
+    "_postman_id": "sudz-custom-extensions",
+    "name": "Sudz - Custom Extensions",
+    "description": "Additional endpoints not yet shipped in the upstream collections.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Authentication",
+      "item": [
+        {
+          "name": "Delete Account",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              { "key": "Accept", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{auth_token}}" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/auth/delete-account",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "delete-account"]
+            }
+          }
+        },
+        {
+          "name": "Reset Password - Send OTP",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"0512345678\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/reset-password/send-otp",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "reset-password", "send-otp"]
+            }
+          }
+        },
+        {
+          "name": "Reset Password - Verify OTP",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"0512345678\",\n    \"otp\": \"123456\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/reset-password/verify-otp",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "reset-password", "verify-otp"]
+            }
+          }
+        },
+        {
+          "name": "Reset Password - Set New Password",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"0512345678\",\n    \"password\": \"newpassword123\",\n    \"password_confirmation\": \"newpassword123\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/reset-password/set-new-password",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "reset-password", "set-new-password"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

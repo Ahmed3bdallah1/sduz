@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "sudz-technician-api-v1",
+		"name": "Sudz - Technician API",
+		"description": "Complete technician mobile app API collection for Sudz car wash service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Authentication",
+			"item": [
+				{
+					"name": "Login as Technician",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": ["var jsonData = JSON.parse(responseBody);", "if (jsonData.token) {", "    pm.environment.set(\"technician_token\", jsonData.token);", "}"],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"0512345679\",\n    \"password\": \"password123\"\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/auth/login", "host": ["{{base_url}}"], "path": ["auth", "login"]}
+					}
+				},
+				{
+					"name": "Get Profile",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"url": {"raw": "{{base_url}}/auth/profile", "host": ["{{base_url}}"], "path": ["auth", "profile"]}
+					}
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"url": {"raw": "{{base_url}}/auth/logout", "host": ["{{base_url}}"], "path": ["auth", "logout"]}
+					}
+				}
+			]
+		},
+		{
+			"name": "2. Profile & Performance",
+			"item": [
+				{
+					"name": "Get Technician Profile",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"url": {"raw": "{{base_url}}/technician/profile", "host": ["{{base_url}}"], "path": ["technician", "profile"]}
+					}
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Mohammed Ali\",\n    \"bio\": \"Experienced car wash technician\",\n    \"years_experience\": 5\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/technician/profile/update", "host": ["{{base_url}}"], "path": ["technician", "profile", "update"]}
+					}
+				},
+				{
+					"name": "Get Performance Stats",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"url": {"raw": "{{base_url}}/technician/performance", "host": ["{{base_url}}"], "path": ["technician", "performance"]}
+					}
+				},
+				{
+					"name": "Get Badges",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"url": {"raw": "{{base_url}}/technician/badges", "host": ["{{base_url}}"], "path": ["technician", "badges"]}
+					}
+				},
+				{
+					"name": "Set Availability",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"is_available\": true\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/technician/availability", "host": ["{{base_url}}"], "path": ["technician", "availability"]}
+					}
+				}
+			]
+		},
+		{
+			"name": "3. Job Management",
+			"item": [
+				{
+					"name": "List Available Jobs",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"url": {"raw": "{{base_url}}/technician/jobs?filter=available", "host": ["{{base_url}}"], "path": ["technician", "jobs"], "query": [{"key": "filter", "value": "available"}]}
+					}
+				},
+				{
+					"name": "List Assigned Jobs",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"url": {"raw": "{{base_url}}/technician/jobs?filter=assigned", "host": ["{{base_url}}"], "path": ["technician", "jobs"], "query": [{"key": "filter", "value": "assigned"}]}
+					}
+				},
+				{
+					"name": "List In Progress Jobs",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"url": {"raw": "{{base_url}}/technician/jobs?filter=in_progress", "host": ["{{base_url}}"], "path": ["technician", "jobs"], "query": [{"key": "filter", "value": "in_progress"}]}
+					}
+				},
+				{
+					"name": "List Today's Jobs",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"url": {"raw": "{{base_url}}/technician/jobs?filter=today", "host": ["{{base_url}}"], "path": ["technician", "jobs"], "query": [{"key": "filter", "value": "today"}]}
+					}
+				},
+				{
+					"name": "Get Job Details",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"url": {"raw": "{{base_url}}/technician/jobs/1", "host": ["{{base_url}}"], "path": ["technician", "jobs", "1"]}
+					}
+				},
+				{
+					"name": "Accept Job",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"url": {"raw": "{{base_url}}/technician/jobs/1/accept", "host": ["{{base_url}}"], "path": ["technician", "jobs", "1", "accept"]}
+					}
+				},
+				{
+					"name": "Reject Job",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reason\": \"Too far from my location\"\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/technician/jobs/1/reject", "host": ["{{base_url}}"], "path": ["technician", "jobs", "1", "reject"]}
+					}
+				},
+				{
+					"name": "Mark Arrival",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"url": {"raw": "{{base_url}}/technician/jobs/1/arrive", "host": ["{{base_url}}"], "path": ["technician", "jobs", "1", "arrive"]}
+					}
+				},
+				{
+					"name": "Start Job",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"url": {"raw": "{{base_url}}/technician/jobs/1/start", "host": ["{{base_url}}"], "path": ["technician", "jobs", "1", "start"]}
+					}
+				},
+				{
+					"name": "Upload Evidence Photos",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{"key": "photos[]", "type": "file", "src": ""},
+								{"key": "photos[]", "type": "file", "src": ""},
+								{"key": "photos[]", "type": "file", "src": ""},
+								{"key": "photos[]", "type": "file", "src": ""},
+								{"key": "photos[]", "type": "file", "src": ""},
+								{"key": "type", "value": "completion_photo", "type": "text"}
+							]
+						},
+						"url": {"raw": "{{base_url}}/technician/jobs/1/upload-evidence", "host": ["{{base_url}}"], "path": ["technician", "jobs", "1", "upload-evidence"]}
+					}
+				},
+				{
+					"name": "Complete Job",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"url": {"raw": "{{base_url}}/technician/jobs/1/complete", "host": ["{{base_url}}"], "path": ["technician", "jobs", "1", "complete"]}
+					}
+				}
+			]
+		},
+		{
+			"name": "4. Earnings & Tips",
+			"item": [
+				{
+					"name": "Get Earnings Summary",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"url": {"raw": "{{base_url}}/technician/earnings", "host": ["{{base_url}}"], "path": ["technician", "earnings"]}
+					}
+				},
+				{
+					"name": "Get This Month Earnings",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"url": {"raw": "{{base_url}}/technician/earnings?period=month", "host": ["{{base_url}}"], "path": ["technician", "earnings"], "query": [{"key": "period", "value": "month"}]}
+					}
+				},
+				{
+					"name": "Get Paid Earnings",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"url": {"raw": "{{base_url}}/technician/earnings?status=paid", "host": ["{{base_url}}"], "path": ["technician", "earnings"], "query": [{"key": "status", "value": "paid"}]}
+					}
+				},
+				{
+					"name": "Get Earning Details",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"url": {"raw": "{{base_url}}/technician/earnings/1", "host": ["{{base_url}}"], "path": ["technician", "earnings", "1"]}
+					}
+				},
+				{
+					"name": "Get Tips Received",
+					"request": {
+						"method": "GET",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"url": {"raw": "{{base_url}}/technician/earnings/tips/received", "host": ["{{base_url}}"], "path": ["technician", "earnings", "tips", "received"]}
+					}
+				}
+			]
+		},
+		{
+			"name": "5. Offline Sync",
+			"item": [
+				{
+					"name": "Sync Offline Actions",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Accept", "value": "application/json"}, {"key": "Authorization", "value": "Bearer {{technician_token}}"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"actions\": [\n        {\n            \"action_type\": \"arrive\",\n            \"booking_id\": 1,\n            \"timestamp\": \"2025-11-15 10:05:00\"\n        },\n        {\n            \"action_type\": \"start\",\n            \"booking_id\": 1,\n            \"timestamp\": \"2025-11-15 10:10:00\"\n        },\n        {\n            \"action_type\": \"complete\",\n            \"booking_id\": 1,\n            \"timestamp\": \"2025-11-15 11:00:00\"\n        }\n    ]\n}",
+							"options": {"raw": {"language": "json"}}
+						},
+						"url": {"raw": "{{base_url}}/technician/sync", "host": ["{{base_url}}"], "path": ["technician", "sync"]}
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		},
+		{
+			"key": "technician_token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
+

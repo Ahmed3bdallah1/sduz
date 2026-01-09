@@ -1,0 +1,439 @@
+{
+  "app_name": "Sudz",
+  "welcome": "Welcome",
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "error_title": "Error",
+    "login_required_title": "Login Required",
+    "login_required_message": "You must login first to proceed",
+    "login_button": "Login"
+  },
+  "home": {
+    "services_title": "Services",
+    "packages_title": "Packages",
+    "view_all": "View All",
+    "others_category": "Others",
+    "package_name": "Package Name",
+    "remaining_days": "Remaining Days",
+    "day": "Day",
+    "days": "Days",
+    "remaining_washes": "Remaining Washes",
+    "wash": "Wash",
+    "washes": "Washes"
+  },
+  "messages": {
+    "account_created_please_verifiy_your_phone": "Account created. Please verify your phone.",
+    "phone_verified_successfully": "Your phone was verified successfully.",
+    "invalid_code": "The verification code is invalid.",
+    "code_resent": "We sent you a new verification code.",
+    "user_loged_successfully": "Logged in successfully."
+  },
+  "auth": {
+    "role_selection": {
+      "title": "Choose your experience",
+      "subtitle": "Select how you'd like to use Sudz.",
+      "client_title": "Client",
+      "client_description": "Book and track your car care requests.",
+      "technical_title": "Technician",
+      "technical_description": "Manage assigned jobs and upload work evidence.",
+      "continue_client": "Continue as Client",
+      "continue_technical": "Continue as Technician",
+      "already_have_account": "Already have an account?",
+      "login_link": "Log in"
+    },
+    "login": {
+      "title": "Welcome Back",
+      "subtitle": "Please login to continue.",
+      "email_or_phone_label": "Email or Phone Number",
+      "email_or_phone_hint": "Enter email or phone number",
+      "email_or_phone_error": "Please enter email or phone number",
+      "password_label": "Password",
+      "password_hint": "Enter password",
+      "password_error_empty": "Please enter password",
+      "password_error_length": "Password must be at least 6 characters",
+      "forgot_password": "Forgot Password?",
+      "login_button": "Login",
+      "no_account": "Don't have an account? ",
+      "create_account": "Create Account",
+      "login_as_guest": "Login as Guest",
+      "register_link": "Register",
+      "success_title": "Login Successful",
+      "success_message": "Welcome!",
+      "error_message": "An error occurred during login",
+      "error_empty_fields": "Please fill all fields",
+      "technical_title": "Welcome Technician",
+      "technical_subtitle": "Sign in to manage your assigned jobs.",
+      "technical_no_signup": "Technician access is provided by the Sudz team.",
+      "back_to_roles": "Choose different role"
+    },
+    "signup": {
+      "title": "Welcome",
+      "subtitle": "Create your account to continue",
+      "name_label": "Name",
+      "name_hint": "Enter your full name",
+      "name_error": "Please enter your name",
+      "phone_label": "Phone Number",
+      "phone_hint": "Enter phone number",
+      "phone_error": "Please enter phone number",
+      "email_label": "Email (Optional)",
+      "email_hint": "Enter email address",
+      "email_error": "Please enter email",
+      "password_label": "Password",
+      "password_hint": "Enter password",
+      "password_error_empty": "Please enter password",
+      "password_error_length": "Password must be at least 6 characters",
+      "signup_button": "Sign Up",
+      "have_account": "Already have an account? ",
+      "login": "Login",
+      "success_title": "Signup Successful",
+      "success_message": "Your account has been created successfully!",
+      "error_message": "An error occurred during signup",
+      "error_empty_fields": "Please fill all fields",
+      "technical_not_available": "Technician accounts are provisioned by Sudz. Please contact support."
+    },
+    "verify_phone": {
+      "title": "Verify your phone",
+      "subtitle": "Enter the 6-digit code sent to {phone} to verify your account.",
+      "code_label": "Verification code",
+      "code_hint": "Enter 6-digit code",
+      "submit_button": "Verify",
+      "resend_button": "Resend code",
+      "code_length_error": "Please enter the 6-digit verification code.",
+      "generic_error": "We couldn't verify your phone. Please try again.",
+      "success_title": "Phone verified",
+      "missing_arguments": "We could not start phone verification. Please restart the sign up flow."
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "error_generic": "Something went wrong",
+    "logout": "Log out",
+    "logout_confirm_title": "Confirm Logout",
+    "logout_confirm_message": "Are you sure you want to logout?",
+    "quick_links": {
+      "cars": "My Cars",
+      "packages": "My Packages",
+      "gifts": "Dedications",
+      "language": "Language"
+    },
+    "language": {
+      "ar": "ar",
+      "en": "eng",
+      "ar_label": "Arabic",
+      "en_label": "English"
+    },
+    "policies": {
+      "privacy": "Privacy Policy",
+      "reservation": "Reservation & Cancellation Policy"
+    },
+    "logout": "Log out",
+    "cars": {
+      "title": "My Cars",
+      "add_button": "Add Car",
+      "plate_prefix": "License Plate: {}",
+      "primary_badge": "Default car",
+      "make_primary": "Set as primary",
+      "edit": "Edit",
+      "delete": "Delete",
+      "edit_coming_soon": "Editing coming soon",
+      "empty_state": {
+        "title": "No cars saved",
+        "subtitle": "Add your vehicle to book services faster."
+      }
+    },
+    "packages": {
+      "title": "My Packages",
+      "price_format": "{} SAR",
+      "wash_count": "{} washes",
+      "validity_days": "{} days",
+      "benefits": {
+        "exterior_detail": "Exterior wash & polish",
+        "interior_vacuum": "Interior vacuum cleaning",
+        "wheel_shine": "Wheel shine & rim cleaning",
+        "quick_exterior": "Quick exterior wash",
+        "glass_clean": "Interior glass cleaning",
+        "cabin_freshener": "Cabin freshener"
+      },
+      "add_button": "Add Package",
+      "add_toast": "Package purchase coming soon",
+      "empty_state": {
+        "title": "No packages active",
+        "subtitle": "Subscribe to a package and unlock exclusive deals."
+      }
+    },
+    "dedication": {
+      "title": "Dedications",
+      "subtitle": "Send a car wash package as a gift to your loved ones.",
+      "phone_hint": "Phone number",
+      "type_hint": "Choose gift type",
+      "submit": "Send",
+      "success": "Dedication sent successfully",
+      "error_phone": "Please enter a phone number",
+      "error_type": "Please choose a gift type",
+      "load_failure": "Failed to load dedication options"
+    }
+  },
+  "service": {
+    "checkout": {
+      "title": "Checkout Options",
+      "selection_title": "Choose how to continue",
+      "button_continue": "Continue",
+      "summary_title": "Booking summary",
+      "summary_service_label": "Selected service",
+      "summary_car_label": "Vehicle",
+      "summary_schedule_label": "Scheduled time",
+      "summary_total_label": "Total due",
+      "single_summary_helper": "Pay on completion",
+      "package_summary_covered": "Covered by package",
+      "package_summary_helper": "No additional payment required",
+      "option_single_title": "One-time service",
+      "option_single_subtitle": "Pay only for this appointment",
+      "option_package_title": "Use package balance",
+      "option_package_subtitle": "Deduct from your active package",
+      "option_package_disabled": "Activate your package to use it here",
+      "package_header": "Active package",
+      "package_washes": "{} washes remaining",
+      "package_days": "{} days left",
+      "package_unavailable": "You do not have an active package.",
+      "package_disabled_hint": "Enable your package to use it for this booking.",
+      "package_title": "Package checkout",
+      "package_placeholder": "Package checkout flow coming soon.",
+      "single_title": "Single service checkout",
+      "single_placeholder": "Single service checkout flow coming soon.",
+      "error_no_package": "No active package available.",
+      "error_choose_option": "Please choose how you would like to continue.",
+      "error_missing_params": "Missing checkout data.",
+      "error_select_car": "Please choose a car before continuing.",
+      "error_select_service": "Please choose a service before continuing.",
+      "proceed_with_price": "Continue • {} {}",
+      "proceed_button": "Continue"
+    },
+    "schedule": {
+      "title": "Choose Schedule",
+      "calendar_title": "Pick a day",
+      "pick_slot_title": "Select a suitable time",
+      "request_alternate": "Request another time",
+      "alternate_requested": "We will notify you when a new time is available.",
+      "continue": "Confirm",
+      "total_label": "Total",
+      "package_covered": "Included in package",
+      "no_slot_selected": "Select a day and time",
+      "error_unavailable_slot": "This slot is no longer available.",
+      "error_select_slot": "Please select a time slot to continue.",
+      "today_badge": "Today",
+      "weekday_sun": "Sun",
+      "weekday_mon": "Mon",
+      "weekday_tue": "Tue",
+      "weekday_wed": "Wed",
+      "weekday_thu": "Thu",
+      "weekday_fri": "Fri",
+      "weekday_sat": "Sat"
+    }
+  },
+  "tech": {
+    "common": {
+      "cancel": "Cancel"
+    },
+    "home": {
+      "title": {
+        "jobs": "My Jobs",
+        "profile": "My Account"
+      },
+      "nav": {
+        "jobs": "My Jobs",
+        "profile": "Account",
+        "switch_role": "Switch role"
+      }
+    },
+    "profile": {
+      "coming_soon": "Technician profile coming soon",
+      "header": {
+        "title": "Technician Profile",
+        "subtitle": "Review your service identity and contact the admin if you need help."
+      },
+      "initials": "TS",
+      "name": "Service Provider",
+      "role": "Field Technician",
+      "app_name_label": "App Name",
+      "app_name_value": "SUDZ • The Service Store",
+      "service_brand": "Service Brand",
+      "service_description": "Delivering premium on-site car care",
+      "contact_header": "Need support?",
+      "contact_hint": "The admin is ready to help with scheduling or customer issues.",
+      "call_admin": "Call Admin",
+      "admin_phone": "+966500000000",
+      "call_error": "Unable to launch the call. Please try again."
+    },
+    "jobs": {
+      "filters": {
+        "today": "Today",
+        "upcoming": "Upcoming",
+        "overdue": "Overdue",
+        "all": "All"
+      },
+      "status": {
+        "assigned": "Assigned",
+        "en_route": "En-route",
+        "on_site": "On-site",
+        "work_started": "Work started",
+        "work_completed": "Work completed",
+        "pending_review": "Pending review",
+        "closed": "Closed",
+        "rejected": "Rejected",
+        "cancelled": "Cancelled"
+      },
+      "list": {
+        "error": {
+          "generic": "Failed to load jobs",
+          "maps": "Could not open Google Maps"
+        },
+        "actions": {
+          "open_maps": "Open in Maps",
+          "retry": "Retry"
+        },
+        "request_code": "Request • {}",
+        "pending_sync": "Pending sync • Updates will send when online",
+        "view_details": "View details",
+        "distance": {
+          "kilometers": "{} km",
+          "eta_hours": "ETA {} h",
+          "eta_hours_minutes": "ETA {}h {}m",
+          "eta_minutes": "ETA {} min"
+        },
+        "empty": {
+          "title": "No jobs for this filter",
+          "subtitle": "You can refresh to check if new requests are available."
+        },
+        "syncing_banner": "Syncing updates…"
+      },
+      "details": {
+        "title_default": "Job details",
+        "error": {
+          "generic": "Failed to load job details"
+        },
+        "app_bar": "Job {}",
+        "badge": {
+          "pending_sync": "Pending sync"
+        },
+        "sections": {
+          "overview": "Overview",
+          "client": "Client",
+          "location": "Location"
+        },
+        "fields": {
+          "request_id": "Request ID",
+          "window": "Scheduled window"
+        },
+        "location": {
+          "open_maps": "Open in Google Maps",
+          "error_maps": "Unable to open Google Maps for this location."
+        },
+        "client": {
+          "error_call": "Unable to start a phone call to {}."
+        },
+        "sync": {
+          "title": "Offline updates",
+          "subtitle": "These actions are waiting to sync when a connection is available.",
+          "in_progress": "Syncing…",
+          "action": "Sync now"
+        },
+        "evidence": {
+          "pre": {
+            "title": "Pre-work evidence",
+            "helper": "Capture at least {} photos before starting work."
+          },
+          "post": {
+            "title": "Post-work evidence",
+            "helper": "Upload {} photos before completing the job."
+          },
+          "rejection": {
+            "title": "Rejection evidence",
+            "helper": "Optional documentation captured when rejecting the job."
+          },
+          "optional": "Optional",
+          "progress": "{} / {} required",
+          "labels": {
+            "pre": "Pre-work photo {}",
+            "post": "Post-work photo {}",
+            "rejection": "Rejection photo {}"
+          },
+          "remove": "Remove",
+          "add_photo": "Add photo"
+        },
+        "history": {
+          "title": "History"
+        },
+        "actions": {
+          "arrive": "Mark Arrived",
+          "reject": "Reject Request",
+          "start_work": "Start Work",
+          "complete_work": "Complete Work",
+          "call": "Call Client"
+        },
+        "validation": {
+          "pre_evidence_required": "Upload at least {} pre-work photos before starting.",
+          "post_evidence_required": "Upload {} post-work photos before completing."
+        },
+        "status": {
+          "pending_review_message": "Job marked complete. Awaiting admin review.",
+          "work_completed_message": "Work completion recorded. You will be notified once reviewed.",
+          "closed_message": "This request is closed.",
+          "rejected_message": "Request rejected. Await further instructions.",
+          "cancelled_message": "This job was cancelled."
+        },
+        "toast": {
+          "already_closed": "This request is already closed.",
+          "arrive_invalid_state": "Arrival is only available from Assigned or En-route states.",
+          "arrive_outside_radius": "You are outside the arrival radius (about {}{}). Provide override notes.",
+          "pre_evidence_progress": "Pre-work evidence • {}/{}",
+          "post_evidence_progress": "Post-work evidence • {}/{}",
+          "rejection_evidence_added": "Rejection evidence attached ({}).",
+          "pre_evidence_required": "Upload at least {} pre-work photos before starting.",
+          "work_started": "Marked as Work Started",
+          "post_evidence_required": "Upload {} post-work photos before completing.",
+          "work_completed": "Work marked as completed",
+          "rejection_reason_short": "Please provide at least 10 characters for the reason.",
+          "rejected": "Request rejected",
+          "no_pending_sync": "No pending updates to sync.",
+          "sync_success": "Updates synced successfully",
+          "arrived": "Arrived on-site recorded"
+        },
+        "timeline": {
+          "assigned": "Request assigned",
+          "assigned_note": "Scheduled window {}",
+          "work_started": "Work started",
+          "work_completed": "Work completed",
+          "rejected": "Request rejected",
+          "rejected_note": "Reason: {}",
+          "arrived": "Arrived on-site",
+          "override_note": "Override: {}",
+          "pending_synced": "Pending updates synced"
+        },
+        "pending_actions": {
+          "arrive": "Arrive on-site",
+          "arrive_override": "Arrive (override)",
+          "start_work": "Work started",
+          "complete_work": "Work completed",
+          "reject": "Reject • {}"
+        },
+        "geo": {
+          "title": "Outside arrival radius",
+          "description": "You appear to be {}{} from the site. Add an override note for admin review or cancel.",
+          "description_no_distance": "You appear to be outside the expected location. Add a note for admin review or cancel.",
+          "override_label": "Override note",
+          "override_hint": "Explain why you need to mark as arrived from here.",
+          "submit": "Submit override"
+        },
+        "reject": {
+          "title": "Reject request",
+          "description": "Share a clear reason (min 10 characters). The admin and client will receive this message.",
+          "input_label": "Reason for rejection",
+          "add_placeholder": "Attach placeholder photo",
+          "submit": "Submit rejection"
+        }
+      }
+    }
+  }
+}
